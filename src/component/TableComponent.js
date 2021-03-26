@@ -1,10 +1,11 @@
 import React from 'react'
-import { Button, Container } from 'react-bootstrap';
+import { Button, Col, Container, Row } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faInfo, faEdit, faTrash } from '@fortawesome/free-solid-svg-icons'
+import { faInfo, faEdit, faTrash, faUserPlus } from '@fortawesome/free-solid-svg-icons'
 import BootstrapTable from 'react-bootstrap-table-next';
 import ToolkitProvider, { Search } from 'react-bootstrap-table2-toolkit';
 import paginationFactory from 'react-bootstrap-table2-paginator';
+import { Link } from 'react-router-dom'
 
 const { SearchBar } = Search;
 
@@ -36,12 +37,16 @@ const columns = [{
     formatter: (rowContent, row) => {
         return (
             <div>
-                <Button className="mr-2" variant="outline-dark">
-                    <FontAwesomeIcon icon={faInfo} />Detail
+                <Link to={"detail/" + row.id}>
+                    <Button className="mr-2" variant="outline-dark">
+                        <FontAwesomeIcon icon={faInfo} />Detail
                     </Button>
-                <Button className="mr-2" variant="outline-dark">
-                    <FontAwesomeIcon icon={faEdit} />Edit
+                </Link>
+                <Link to={"edit/" + row.id}>
+                    <Button className="mr-2" variant="outline-dark">
+                        <FontAwesomeIcon icon={faEdit} />Edit
                     </Button>
+                </Link>
                 <Button className="mr-2" variant="outline-danger">
                     <FontAwesomeIcon icon={faTrash} />Delete
                     </Button>
@@ -70,19 +75,31 @@ const TableComponent = (props) => {
                 {
                     props => (
                         <div>
-                            <div className="float-right">
-                            <SearchBar {...props.searchProps} />
+                            <Row>
+                                <Col>
+                                    <Link to={"/tambah"}>
+                                        <Button className="mr-2" variant="outline-dark">
+                                            <FontAwesomeIcon icon={faUserPlus} />Add User
+                                        </Button>
+                                    </Link>
+                                </Col>
+                                <Col>
+                                    <div className="float-right">
+                                        <SearchBar {...props.searchProps} />
 
-                            </div>
+                                    </div>
+
+                                </Col>
+                            </Row>
                             <BootstrapTable
                                 {...props.baseProps}
-                                pagination={ paginationFactory() }
+                                pagination={paginationFactory()}
                             />
                         </div>
                     )
                 }
             </ToolkitProvider>
-           
+
 
         </Container>
     )
