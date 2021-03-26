@@ -1,0 +1,88 @@
+{
+    "users" : [
+        {
+            "id": 1,
+            "nama": "Ahmat Rizal",
+            "alamat": "Pejaten Barat",
+            "umur": 25,
+            "nohp": "0890123990"
+        },
+        {
+            "id": 2,
+            "nama": "Eka Novitasari",
+            "alamat": "Lenteng Agung",
+            "umur": 26,
+            "nohp": "082572116670"
+        },
+        {
+            "id": 3,
+            "nama": "Muhammad Alvariza Nabiha",
+            "alamat": "Kemang timur",
+            "umur": 2,
+            "nohp": "08100238800"
+        },
+        {
+            "id": 4,
+            "nama": "Rodhatul Janah",
+            "alamat": "Pejaten",
+            "umur": 38,
+            "nohp": "082572112231"
+        },
+        {
+            "id": 5,
+            "nama": "Listyana",
+            "alamat": "Jati Padang",
+            "umur": 35,
+            "nohp": "08923120398"
+        },
+        {
+            "id": 6,
+            "nama": "Kuswaji",
+            "alamat": "Pejaten Timur",
+            "umur": 33,
+            "nohp": "0982342349"
+        },
+        {
+            "id": 7,
+            "nama": "Rohma Wati",
+            "alamat": "Karang Jati",
+            "umur": 30,
+            "nohp": "08921367123"
+        },
+        {
+            "id": 8,
+            "nama": "Rizqi Azahwa Adha",
+            "alamat": "Petukangan",
+            "umur": 12,
+            "nohp": "08899121123"
+        },
+        {
+            "id": 9,
+            "nama": "Muhammad Aulia Hilmy",
+            "alamat": "Pekalongan",
+            "umur": 10,
+            "nohp": "09988912323"
+        },
+        {
+            "id": 10,
+            "nama": "Daeri",
+            "alamat": "Wiradesa",
+            "umur": 62,
+            "nohp": "0891239879123"
+        },
+        {
+            "id": 11,
+            "nama": "Slamet Royati",
+            "alamat": "Karajati Lor",
+            "umur": 56,
+            "nohp": "089712397123"
+        },
+        {
+            "id": 12,
+            "nama": "Dzifa Putri Novita",
+            "alamat": "Jagakarsa",
+            "umur": 1,
+            "nohp": "098102983123"
+        }
+    ]
+}
