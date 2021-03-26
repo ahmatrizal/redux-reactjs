@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Col, Container, Row } from 'react-bootstrap';
+import { Button, Col, Container, Row, Spinner } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faInfo, faEdit, faTrash, faUserPlus } from '@fortawesome/free-solid-svg-icons'
 import BootstrapTable from 'react-bootstrap-table-next';
@@ -57,15 +57,18 @@ const defaultSorted = [{
 }];
 
 const mapStateToProps = (state) => {
-    return { users: state.users.users }
+    return {
+        getUsersList: state.users.getUsersList,
+        error: state.users.error
+    }
 }
 
 const TableComponent = (props) => {
     return (
         <Container>
-            <ToolkitProvider
+            { props.getUsersList ? <ToolkitProvider
                 keyField="id"
-                data={props.users}
+                data={props.getUsersList}
                 columns={columns}
                 search
                 defaultSorted={defaultSorted}
@@ -96,7 +99,11 @@ const TableComponent = (props) => {
                         </div>
                     )
                 }
-            </ToolkitProvider>
+            </ToolkitProvider> : <div className="text-center">
+                { props.error ? <h4>{props.error}</h4> : <Spinner animation="grow" /> }
+                
+                </div>}
+
 
 
         </Container>

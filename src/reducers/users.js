@@ -1,35 +1,25 @@
+import { GET_USERS_LIST } from "../actions/userAction";
+
 let initialState = {
-    users: [
-        {
-            id: 1,
-            nama: "Ahmat Rizal",
-            alamat: "Pejaten Barat",
-            umur: 25,
-            nohp: "0890123990",
-        },
-        {
-            id: 2,
-            nama: "Eka Novitasari",
-            alamat: "Lenteng Agung",
-            umur: 26,
-            nohp: "082572116670",
-        },
-        {
-            id: 3,
-            nama: "Muhammad Alvariza Nabiha",
-            alamat: "Kemang timur",
-            umur: 2,
-            nohp: "08100238800",
-        },
-    ],
+    getUsersList: false,
     title: "AhmdR. Redux",
     error : false,
 }
 
 const users = (state = initialState, action) => {
-    return (
-        state
-    )
+    
+    switch (action.type) {
+        case GET_USERS_LIST:
+            return {
+                ...state,
+                getUsersList : action.payload.data,
+                error : action.payload.errorMessage,
+            }
+    
+        default:
+            return state;
+    }
+     
 }
 
-export default users
+export default users;
