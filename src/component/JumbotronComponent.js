@@ -1,5 +1,10 @@
 import React from 'react'
 import { Jumbotron, Button, Container } from 'react-bootstrap'
+import { connect } from 'react-redux'
+
+const mapStateToProps = (state) => {
+    return { title: state.users.title }
+}
 
 function JumbotronComponent(props) {
     return (
@@ -21,4 +26,4 @@ function JumbotronComponent(props) {
     )
 }
 
-export default JumbotronComponent
+export default connect(mapStateToProps,null) (JumbotronComponent)
