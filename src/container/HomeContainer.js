@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
+import TableComponent from '../component/TableComponent'
 
 export default class HomeContainer extends Component {
     render() {
         return (
             <div>
-                <h1>home</h1>
+                <TableComponent users={this.props.users} />
             </div>
         )
     }
