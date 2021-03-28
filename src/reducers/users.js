@@ -1,25 +1,33 @@
-import { GET_USERS_LIST } from "../actions/userAction";
+import { GET_USERS_LIST, GET_USER_DETAIL } from "../actions/userAction";
 
 let initialState = {
-    getUsersList: false,
     title: "AhmdR. Redux",
-    error : false,
+    getUsersList: false,
+    getUserDetail: false,
+    error: false,
 }
 
 const users = (state = initialState, action) => {
-    
+
     switch (action.type) {
         case GET_USERS_LIST:
             return {
                 ...state,
-                getUsersList : action.payload.data,
-                error : action.payload.errorMessage,
+                getUsersList: action.payload.data,
+                error: action.payload.errorMessage,
             }
-    
+
+        case GET_USER_DETAIL:
+            return {
+                ...state,
+                getUserDetail: action.payload.data,
+                error: action.payload.errorMessage,
+            }
+
         default:
             return state;
     }
-     
+
 }
 
 export default users;
