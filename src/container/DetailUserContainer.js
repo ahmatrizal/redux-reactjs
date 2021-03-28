@@ -14,7 +14,8 @@ import DetailUserComponent from '../component/DetailUserComponent';
             <div>
                 <Container>
                     <BackComponent />
-                    <h1>Detail {this.props.match.params.id}</h1>
+                    <h1 className="text-center">Detail User</h1>
+                    <hr />
                     <DetailUserComponent />
                 </Container>
             </div>
